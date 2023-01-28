@@ -1,0 +1,4 @@
+Apenas para subir a pasta no github 
+
+Posteriormente será criado dentro desta pasta padroes_adotados 
+de acordo com a #5 fase 0
