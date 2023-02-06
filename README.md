@@ -6,7 +6,7 @@
 
 ## TECNOLOGIAS UTILIZADAS:
 
-* **Linguagem:** [Java](https://www.java.com/pt-BR/) - Versão: **17.0.5**
+* **Linguagem:** [PHP](https://www.php.net/) - Versão: **8.2**
 
 * **Banco de Dados:** [MySQL](https://www.mysql.com/) - Versão: **8.0.32**
 * **Servidor:**  [XAMPP](https://www.apachefriends.org/pt_br/index.html) - Versão: **8.2.0**
