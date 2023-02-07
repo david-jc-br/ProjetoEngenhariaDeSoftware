@@ -1,5 +1,3 @@
-Apenas para subir a pasta no github 
-
 Posteriormente será criado dentro desta pasta padroes_adotados de acordo com a #5 fase 0
 
 #Específicação de caracteristicas:
@@ -20,13 +18,13 @@ Posteriormente será criado dentro desta pasta padroes_adotados de acordo com a 
     > Prefixo RNF, seguido de algarismo  e o nome do requisito.
 
 #REQUISITOS FUNCIONAIS
-###Cadastrar
+###RF1 Cadastrar
     > Funcionário
     > Carro 
     > Aluguel 
     > Cliente
 
-###Consultar
+###RF2 Consultar
     > Funcionário
     > Funcionário por CPF
     > Veiculo pela placa 
@@ -35,22 +33,18 @@ Posteriormente será criado dentro desta pasta padroes_adotados de acordo com a 
     > Cliente por CPF
     > Cliente por CNOJ 
 
-###Atualizar
+###RF3 Atualizar
     > Funcionário
     > Cliente
     > Carro 
     > Alugados
 
-###Exluir
+###RF4 Exluir
     > Funcionário
     > Aluguel 
 
 #REQUISITOS NÃO FUNCIONAIS,
-    > Usuabilidade
-    > Corretude 
-    > Hospedagem cloud. 
-    > Consulta agil
+    > Hospedagem cloud.
+    > Consulta agil.
     > Autenticação.
     > Facilidade de manutenção.
-    > Portabilidade. 
-    > Banco cripitografada.
