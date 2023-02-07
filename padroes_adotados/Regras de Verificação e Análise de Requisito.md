@@ -2,8 +2,8 @@ Posteriormente será criado dentro desta pasta padroes_adotados de acordo com a 
 
 #Específicação de caracteristicas:
 
-
 #Regras dos Requisistos:
+
 ##Defina somente um requisito por vez.
 
 ##Mantenha uma estrutura hierarquica dos requisitos.
@@ -17,7 +17,8 @@ Posteriormente será criado dentro desta pasta padroes_adotados de acordo com a 
  - REQUISITOS NÃO FUNCIONAIS
     > Prefixo RNF, seguido de algarismo  e o nome do requisito.
 
-#REQUISITOS FUNCIONAIS#
+#REQUISITOS FUNCIONAIS
+
 ###RF1 Cadastrar
     > Funcionário
     > Carro 
