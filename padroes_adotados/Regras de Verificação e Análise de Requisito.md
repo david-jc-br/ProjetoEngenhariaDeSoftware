@@ -1,52 +1,79 @@
-Posteriormente será criado dentro desta pasta padroes_adotados de acordo com a #5 fase 0
+## PADROẼS_ADOTADOS
+---
+* Específicação de caracteristicas:
+* Defina somente um requisito por vez.
+* Mantenha uma estrutura hierarquica dos requisitos.
+* Transforme os requisitos do usuário em requisitos de software.
+   
 
-# Específicação de caracteristicas:
+## Regras dos Requisistos:
 
-# Regras dos Requisistos:
-
-## Defina somente um requisito por vez.
-
-## Mantenha uma estrutura hierarquica dos requisitos.
-
-## Transforme os requisitos do usuário em requisitos de software.
-
-# Estrutura das nomeclatura dos requisitos funcionais
- - REQUISITOS FUNCIONAIS
-    > RF-R1F Consultar Funcionário, _**RF**Requisitons Funcináis, **R**read **1**, Pertence o grupo do CRUD **F**,
-    > Tabela Funcionári._
- - REQUISITOS NÃO FUNCIONAIS
-    > Prefixo RNF, seguido de dois algarismo inicial do requisito.
-
-# REQUISITOS FUNCIONAIS
-> RF-C1F ***Cadastrar Funcionário***
-> RF-C2V ***Cadastrar Veículo***
-> RF-C3A ***Cadastrar Aluguel***
-> RF-C4C ***Cadastrar Cliente***
-
-> RF-R1F ***Consultar Funcionário***
-> RF-R2V ***Consultar Veiculo pela placa***
-> RF-R4A ***Consultar Veículos Alugados***
-> RF-R3C ***Consultar Cliente ID***
-
-> RF-U1F ***Atualizar Funcionário***
-> RF-U2V ***Atualizar Veículo***
-> RF-U3A ***Atualizar Alugados***
-> RF-U4C ***Atualizar Cliente***
-
-> RF-D1F ***Exluir Funcionário***
-> RF-D2V ***Excluir Veículo***
-> RF-D3A ***Exluir Aluguel***
-> RF-D4E ***Excluir Cliente***
-
-> RF-R4F ***Consultar Funcionário por CPF***
-> RF-R5V ***Consultar Veiculo pela classificação***
-> RF-R6C ***Consultar Cliente por CPF***
-> RF-R7C ***Consultar Cliente por CNPJ***
-> RF-C5R ***Reservar Veículo***
+### Estrutur as nomeclatura dos requisitos funcionais e não funcionais
+---
+##### REQUISITOS FUNCIONAIS 
+     Exemplo para compreender a nomeclaturas dos requisitos funcionais.
+     RF-R1U Consulta de Usuários: 
+     RF (Requisitos Funcináis);
+     R (read);
+     1 a 4 (Pertence o grupo do CRUD);
+     U (Tabela Usuários).
+     Obs: Algarismo maior que >  4 trada de versão de crecimento da empresa
+     
+##### REQUISITOS NÃO FUNCIONAIS
+    Exemplo para commpreender a noclaturas dos requisitos não funcionais
+    RNF-M00 Manuteção:
+    RNF (Requisitos não funcionais);
+    M (Manuteção);
+    0 (Baseline);
+    0 (versão);
+----
+#### REQUISITOS ADMINISTRADOR 
+    CADASTRAR:
+     RF-C1U Usuário
+     RF-C2V Veículo
+     RF-C3A Aluguel
+ 
+    CONSULTAR:
+     RF-R1U Usuário
+     RF-R2V Veículo
+     RF-R3A Aluguel
+  
+    ATUALIZAR:
+     RF-U1U Usuário
+     RF-U2V Veículo
+     RF-U3A Alugados
+ 
+    EXCLUIR:
+     RF-D1U Usuário
+     RF-D2V Veículo
+     RF-D3A Aluguel
+   
 
 # REQUISITOS NÃO FUNCIONAIS
-> RNF-H00 ***Hospedagem cloud.***
-> RNF-C00 ***Consulta ágil.***
-> RNF-A00 ***Autenticação.***
-> RNF-M00 ***Manutenção.***
 
+    Usabilidade
+      RNF-H00 Hospedagem cloud
+      RNF-SSHl Conexão ssh para desenvolvedore
+      RNF-3306 Conexão com o banco via MySQL Workbenc
+      
+    Confiabilidade
+      RNF-M00 Manutenção
+
+    Desempenho
+      RNF-D00 Desenpenho
+      RNF-C00 Consulta Ágil
+
+    Segurança
+      RNF-A00 Altentico
+      RNF-A01 Banco Criptografado
+      
+    Distribuição
+      RNF-V00 Estrutura de Verções
+      NF-V11 Estrutura de crecimento da empresa
+
+    Padrões
+       RNF-P00 Nomeclatura dos Requisitos
+
+    Hardware e software
+      RNF-H01 Hardware
+      RNF-S00 Software 
