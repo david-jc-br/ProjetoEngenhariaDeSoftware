@@ -13,5 +13,5 @@
 
 ## HOSPEDAGEM: 
 * **Servidor próprio:** [solahic.com.br](http://solahic.com.br/) - Versão: **0.0**
-### PAGINA: 
-[Sistema Web de Locação de Veículos](solahic.com.br/~veiculo/) - Versão: **Teste de conectividade**
+### PAGINA:
+[Sistema Web de Locação de Veículos](http://solahic.com.br/~veiculo/) - Versão: **Teste de conectividade**
