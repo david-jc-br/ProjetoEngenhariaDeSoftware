@@ -1,51 +1,52 @@
 Posteriormente será criado dentro desta pasta padroes_adotados de acordo com a #5 fase 0
 
-#Específicação de caracteristicas:
+# Específicação de caracteristicas:
 
-#Regras dos Requisistos:
+# Regras dos Requisistos:
 
-##Defina somente um requisito por vez.
+## Defina somente um requisito por vez.
 
-##Mantenha uma estrutura hierarquica dos requisitos.
+## Mantenha uma estrutura hierarquica dos requisitos.
 
-##Transforme os requisitos do usuário em requisitos de software.
+## Transforme os requisitos do usuário em requisitos de software.
 
-#FORMATAÇÃO DOS REQUISITOS
+# Estrutura das nomeclatura dos requisitos funcionais
  - REQUISITOS FUNCIONAIS
-    > Prefixo RF, seguido de algarismo e o nome do requisito. ***Exemplo RF1Funcionário, nesta caso o algarismo 1 trata de
-    > cadastro***
+    > RF-R1F Consultar Funcionário, _**RF**Requisitons Funcináis, **R**read **1**, Pertence o grupo do CRUD **F**,
+    > Tabela Funcionári._
  - REQUISITOS NÃO FUNCIONAIS
-    > Prefixo RNF, seguido de algarismo  e o nome do requisito.
+    > Prefixo RNF, seguido de dois algarismo inicial do requisito.
 
-#REQUISITOS FUNCIONAIS
+# REQUISITOS FUNCIONAIS
+> RF-C1F ***Cadastrar Funcionário***
+> RF-C2V ***Cadastrar Veículo***
+> RF-C3A ***Cadastrar Aluguel***
+> RF-C4C ***Cadastrar Cliente***
 
-###RF1 Cadastrar
-    > Funcionário
-    > Carro 
-    > Aluguel 
-    > Cliente
+> RF-R1F ***Consultar Funcionário***
+> RF-R2V ***Consultar Veiculo pela placa***
+> RF-R4A ***Consultar Veículos Alugados***
+> RF-R3C ***Consultar Cliente ID***
 
-###RF2 Consultar
-    > Funcionário
-    > Funcionário por CPF
-    > Veiculo pela placa 
-    > Veiculo pela classificação 
-    > Cliente ID
-    > Cliente por CPF
-    > Cliente por CNOJ 
+> RF-U1F ***Atualizar Funcionário***
+> RF-U2V ***Atualizar Veículo***
+> RF-U3A ***Atualizar Alugados***
+> RF-U4C ***Atualizar Cliente***
 
-###RF3 Atualizar
-    > Funcionário
-    > Cliente
-    > Carro 
-    > Alugados
+> RF-D1F ***Exluir Funcionário***
+> RF-D2V ***Excluir Veículo***
+> RF-D3A ***Exluir Aluguel***
+> RF-D4E ***Excluir Cliente***
 
-###RF4 Exluir
-    > Funcionário
-    > Aluguel 
+> RF-R4F ***Consultar Funcionário por CPF***
+> RF-R5V ***Consultar Veiculo pela classificação***
+> RF-R6C ***Consultar Cliente por CPF***
+> RF-R7C ***Consultar Cliente por CNPJ***
+> RF-C5R ***Reservar Veículo***
 
-#REQUISITOS NÃO FUNCIONAIS,
-    > Hospedagem cloud.
-    > Consulta agil.
-    > Autenticação.
-    > Facilidade de manutenção.
+# REQUISITOS NÃO FUNCIONAIS
+> RNF-H00 ***Hospedagem cloud.***
+> RNF-C00 ***Consulta ágil.***
+> RNF-A00 ***Autenticação.***
+> RNF-M00 ***Manutenção.***
+
