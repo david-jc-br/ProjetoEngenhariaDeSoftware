@@ -16,8 +16,35 @@
      RF (Requisitos Funcináis);
      R (read);
      1 a 4 (Pertence o grupo do CRUD);
-     U (Tabela Usuários).
+     C (Tabela Cliente) 
+     V (Tabela Veículos)
+     A (Tabela Aluguel) 
+     F (Tabela Funcionário) 
      Obs: Algarismo maior que >  4 trada de versão de crecimento da empresa
+     
+     CADASTRAR:
+     RF-C1C Cliente
+     RF-C2V Veículo
+     RF-C3A Aluguel
+     RF-C4F Funcionário 
+ 
+    CONSULTAR:
+     RF-R1C Cliente
+     RF-R2V Veículo
+     RF-R3A Aluguel
+     RF-R4F Funcionário 
+  
+    ATUALIZAR(Update):
+     RF-U1C Cliente
+     RF-U2V Veículo
+     RF-U3A Aluguel
+     RF-U4F Funcionário 
+ 
+    EXCLUIR(Delete):
+     RF-D1C Cliente
+     RF-D2V Veículo
+     RF-D3A Aluguel
+     RF-D4F Funcionário 
      
 ##### REQUISITOS NÃO FUNCIONAIS
     Exemplo para commpreender a noclaturas dos requisitos não funcionais
@@ -29,25 +56,33 @@
 ----
 #### REQUISITOS ADMINISTRADOR 
     CADASTRAR:
-     RF-C1U Usuário
+     RF-C1C Cliente
      RF-C2V Veículo
      RF-C3A Aluguel
+     RF-C4F Funcionário 
  
     CONSULTAR:
-     RF-R1U Usuário
+     RF-R1C Cliente
      RF-R2V Veículo
      RF-R3A Aluguel
+     RF-R4F Funcionário 
   
-    ATUALIZAR:
-     RF-U1U Usuário
+    ATUALIZAR(Update):
+     RF-U1C Cliente
      RF-U2V Veículo
-     RF-U3A Alugados
+     RF-U3A Aluguel
+     RF-U4F Funcionário 
  
-    EXCLUIR:
-     RF-D1U Usuário
+    EXCLUIR(Delete):
+     RF-D1C Cliente
      RF-D2V Veículo
      RF-D3A Aluguel
-   
+     RF-D4F Funcionário 
+     
+ #### REQUISITOS CLIENTE
+      Visualizar
+      RF-R1V- Vizualizar Catálogo de Veículos 
+ 
 
 # REQUISITOS NÃO FUNCIONAIS
 
