@@ -1,4 +1,4 @@
-## PADROẼS_ADOTADOS
+## PADRÕES_ADOTADOS
 ---
 * Específicação de caracteristicas:
 * Defina somente um requisito por vez.
