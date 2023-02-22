@@ -27,7 +27,7 @@ getRoutes.get('/aluguel/:id', (req, res) => {
     const id = req.params.id;
 
     connection.query(
-        'SELECT * FROM pessoa WHERE codLocação = ?',
+        'SELECT * FROM Aluguel WHERE codLocacao = ?',
         [id],
         (error, results) => {
             if (error) {
@@ -62,7 +62,7 @@ getRoutes.get('/cliente/:id', (req, res) => {
     const id = req.params.id;
 
     connection.query(
-        'SELECT * FROM pessoa WHERE idCliente = ?',
+        'SELECT * FROM Cliente WHERE idCliente = ?',
         [id],
         (error, results) => {
             if (error) {
