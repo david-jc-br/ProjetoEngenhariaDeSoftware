@@ -6,7 +6,40 @@ getRoutes.get('/', (req,res) => {
     res.status(200).send('Restful API NodeJS Working')
 })
 
-getRoutes.get('/clientes', (req, res) => {
+getRoutes.get('/aluguel', (req, res) => {
+    connection.query(
+        'SELECT * FROM Aluguel',
+        (error, results) => {
+            if (error) {
+                return res.send(error);
+            } else {
+                return res.json({
+                    data: results
+                });
+            }
+        }
+    );
+});
+
+getRoutes.get('/aluguel/:id', (req, res) => {
+    const id = req.params.id;
+
+    connection.query(
+        'SELECT * FROM pessoa WHERE codLocação = ?',
+        [id],
+        (error, results) => {
+            if (error) {
+                return res.send(error);
+            } else {
+                return res.json({
+                    data: results
+                });
+            }
+        }
+    );
+});
+
+getRoutes.get('/cliente', (req, res) => {
     connection.query(
         'SELECT * FROM Cliente',
         (error, results) => {
@@ -72,38 +105,7 @@ getRoutes.get('/pessoa/:id', (req, res) => {
     );
 });
 
-getRoutes.get('/alugueis', (req, res) => {
-    connection.query(
-        'SELECT * FROM Aluguel',
-        (error, results) => {
-            if (error) {
-                return res.send(error);
-            } else {
-                return res.json({
-                    data: results
-                });
-            }
-        }
-    );
-});
 
-getRoutes.get('/aluguel/:id', (req, res) => {
-    const id = req.params.id;
-
-    connection.query(
-        'SELECT * FROM pessoa WHERE cod = ?',
-        [id],
-        (error, results) => {
-            if (error) {
-                return res.send(error);
-            } else {
-                return res.json({
-                    data: results
-                });
-            }
-        }
-    );
-});
 
 
 getRoutes.get('/funcionarios', (req, res) => {

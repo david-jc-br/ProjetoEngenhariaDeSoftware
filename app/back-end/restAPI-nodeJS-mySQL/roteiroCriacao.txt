@@ -3,7 +3,7 @@ Inicia projeto nodejs
 npm init -y
 
 Instala o framework express
-npm install express -s
+npm i express -s
 
 create .gitignore 
 
