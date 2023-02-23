@@ -1,1 +1,71 @@
-<iframe src="https://localhost:3001/pessoa"></iframe>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Pessoa</title>
+</head>
+
+<body>
+    <h1>Cadastro de Pessoa</h1>
+    <form id="pessoa-form">
+        <label for="NomeCompleto">NomeCompleto:</label>
+        <input type="text" id="NomeCompleto" name="NomeCompleto" required><br><br>
+        <label for="Cpf">Cpf:</label>
+        <input type="text" id="Cpf" name="Cpf" required><br><br>
+        <label for="Endereco">Endereço:</label>
+        <input type="text" id="Endereco" name="Endereco" required><br><br>
+        <label for="Telefone">Telefone:</label>
+        <input type="text" id="Telefone" name="Telefone" required><br><br>
+        <label for="Email">E-mail:</label>
+        <input type="Email" id="Email" name="Email" required><br><br>
+        <label for="Sexo">Sexo:</label>
+        <select id="Sexo" name="Sexo">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+        </select><br><br>
+        <label for="DataNascimento">Data de Nascimento:</label>
+        <input type="date" id="DataNascimento" name="DataNascimento" required><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        const form = document.getElementById("pessoa-form");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const NomeCompleto = form.elements["NomeCompleto"].value;
+            const Cpf = form.elements["Cpf"].value;
+            const Endereco = form.elements["Endereco"].value;
+            const Telefone = form.elements["Telefone"].value;
+            const Email = form.elements["Email"].value;
+            const Sexo = form.elements["Sexo"].value;
+            const DataNascimento = form.elements["DataNascimento"].value;
+
+            const data = {
+                NomeCompleto,
+                Cpf,
+                Endereco,
+                Telefone,
+                Email,
+                Sexo,
+                DataNascimento
+            };
+
+            fetch("https://localhost:3001/pessoa/add", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error(error));
+        });
+    </script>
+</body>
+
+</html>
