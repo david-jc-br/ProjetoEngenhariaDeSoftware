@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Localiza Veículos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Estilos para o header */
+        header {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav li {
+            margin-left: 1rem;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+        header nav a:hover {
+            background-color: #f1faee;
+            color: #D9D9D9;
+        }
+
+        /* Estilos para a tabela */
+        body {
+            background-color: #D9D9D9;
+            color: #fff;
+            font-size: 1.2rem;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1rem;
+            background-color: #fff;
+            color: #000000;
+        }
+
+        th,
+        td {
+            padding: 0.5rem;
+            text-align: center;
+            border: 1px solid #1e1e1e;
+        }
+
+        th {
+            background-color: #454545;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f1faee;
+        }
+
+        tbody tr:hover {
+            background-color: #6f6f6f;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Localiza Veículos</h1>
+        <i class="./image/logoLocalizaVeiculos.png"></i>
+        <nav>
+            <ul>
+                <li><a href="./inserirPessoa.html">Adicionar Pessoa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Pessoas cadastradas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id Pessoa</th>
+                    <th>Nome completo</th>
+                    <th>CPF</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Sexo</th>
+                    <th>Data de nascimento</th>
+                </tr>
+            </thead>
+            <tbody id="tabela-pessoa">
+                <!-- aqui serão inseridas as linhas da tabela com os dados das pessoas -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // define uma função que faz uma requisição GET para a rota /pessoa e adiciona os resultados na tabela
+        function atualizarTabelapessoa() {
+            // faz a requisição GET para a rota /pessoa
+            fetch('https://localhost:3001/pessoa')
+                .then(response => response.json())
+                .then(data => {
+                    // limpa a tabela
+                    const tabela = document.getElementById('tabela-pessoa');
+                    tabela.innerHTML = '';
+
+                    // adiciona as linhas na tabela
+                    data.data.forEach(pessoa => {
+                        const linha = document.createElement('tr');
+                        linha.innerHTML = `
+              <td>${pessoa.idPessoa}</td>
+              <td>${pessoa.NomeCompleto}</td>
+              <td>${pessoa.CPF}</td>
+              <td>${pessoa.Endereco}</td>
+              <td>${pessoa.Telefone}</td>
+              <td>${pessoa.Email}</td>
+              <td>${pessoa.Sexo}</td>
+              <td>${pessoa.DataNascimento}</td>
+            `;
+                        tabela.appendChild(linha);
+                    });
+                })
+                .catch(error => console.error(error));
+        }
+
+        // chama a função para atualizar a tabela de pessoas ao carregar a página
+        atualizarTabelapessoa();
+    </script>
+</body>
+
+</html>

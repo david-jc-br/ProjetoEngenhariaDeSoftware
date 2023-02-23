@@ -61,8 +61,15 @@
                 },
                 body: JSON.stringify(data)
             })
-                .then(response => response.json())
-                .then(data => console.log(data))
+                .then(response => {
+                    if (response.status === 200) {
+                        alert("Dados enviados com sucesso!");
+                    } else {
+                        response.json().then(data => {
+                            alert(`Erro ao enviar dados: ${data.error}`);
+                        });
+                    }
+                })
                 .catch(error => console.error(error));
         });
     </script>
