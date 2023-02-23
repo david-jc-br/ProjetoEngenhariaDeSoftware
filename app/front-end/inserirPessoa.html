@@ -4,31 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Pessoa</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/inserirPessoa.css">
 </head>
 
 <body>
     <h1>Cadastro de Pessoa</h1>
     <form id="pessoa-form">
-        <label for="NomeCompleto">NomeCompleto:</label>
-        <input type="text" id="NomeCompleto" name="NomeCompleto" required><br><br>
-        <label for="Cpf">Cpf:</label>
-        <input type="text" id="Cpf" name="Cpf" required><br><br>
+        <label for="NomeCompleto">Nome Completo:</label>
+        <input type="text" id="NomeCompleto" name="NomeCompleto" required>
+        <label for="Cpf">CPF:</label>
+        <input type="text" id="Cpf" name="Cpf" required>
+
         <label for="Endereco">Endereço:</label>
-        <input type="text" id="Endereco" name="Endereco" required><br><br>
+        <input type="text" id="Endereco" name="Endereco" required>
+
         <label for="Telefone">Telefone:</label>
-        <input type="text" id="Telefone" name="Telefone" required><br><br>
+        <input type="text" id="Telefone" name="Telefone" required>
+
         <label for="Email">E-mail:</label>
-        <input type="Email" id="Email" name="Email" required><br><br>
+        <input type="email" id="Email" name="Email" required>
+
         <label for="Sexo">Sexo:</label>
         <select id="Sexo" name="Sexo">
             <option value="masculino">Masculino</option>
             <option value="feminino">Feminino</option>
             <option value="outro">Outro</option>
-        </select><br><br>
+        </select>
+
         <label for="DataNascimento">Data de Nascimento:</label>
-        <input type="date" id="DataNascimento" name="DataNascimento" required><br><br>
+        <input type="date" id="DataNascimento" name="DataNascimento" required>
+
         <input type="submit" value="Enviar">
+
     </form>
 
     <script>
