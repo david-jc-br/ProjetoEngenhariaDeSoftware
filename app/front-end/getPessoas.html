@@ -10,12 +10,10 @@
 
 <body>
     <header>
-        <h1>Localiza Veículos</h1>
-        <i class="./image/logoLocalizaVeiculos.png"></i>
+        <h1><img id="logo-localiza" src="./image/logoLocalizaVeiculos.png" alt="Localiza Veículos"> Localiza Veículos
+        </h1>
         <nav>
-            <ul>
-                <li><a href="./inserirPessoa.html">Adicionar Pessoa</a></li>
-            </ul>
+            <button id="addPessoa"><a href="./inserirPessoa.html">Adicionar Pessoa</a></button>
         </nav>
     </header>
 
@@ -32,6 +30,7 @@
                     <th>E-mail</th>
                     <th>Sexo</th>
                     <th>Data de nascimento</th>
+                    <th>Opções</th>
                 </tr>
             </thead>
             <tbody id="tabela-pessoa">
@@ -43,7 +42,7 @@
     <script>
         // define uma função que faz uma requisição GET para a rota /pessoa e adiciona os resultados na tabela
         function atualizarTabelapessoa() {
-            // faz a requisição GET para a rota /pessoa
+            // faz a requisição GET para a rota https://localhost:3001/pessoa
             fetch('https://localhost:3001/pessoa')
                 .then(response => response.json())
                 .then(data => {
@@ -63,6 +62,11 @@
               <td>${pessoa.Email}</td>
               <td>${pessoa.Sexo}</td>
               <td>${pessoa.DataNascimento}</td>
+              <td>
+                <div style="display:flex;">
+                  <button id="editPessoa">Editar</button><button id="deletePessoa">Excluir</button>
+                </div>
+              </td>
             `;
                         tabela.appendChild(linha);
                     });
@@ -73,6 +77,7 @@
         // chama a função para atualizar a tabela de pessoas ao carregar a página
         atualizarTabelapessoa();
     </script>
+
 </body>
 
 </html>

@@ -1,81 +1,159 @@
-/* Estilos para o header */
-header {
-    background-color: #1e1e1e;
-    color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    font-size: 1.5rem;
-}
-
-header h1 {
-    margin: 0;
-}
-
-header nav ul {
-    display: flex;
-    list-style: none;
+/* Estilos gerais */
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
 }
 
-header nav li {
-    margin-left: 1rem;
+#logo-localiza {
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
 }
 
-header nav a {
-    color: #fff;
+body {
+    background-color: #BAB8BB;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%
+}
+
+.container h2 {
+    margin-top: 100px;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+#addPessoa {
+    background-color: #64DE7C;
+}
+
+#addPessoa:hover {
+    background-color: #4EC56B;
+}
+
+
+#editPessoa {
+    background-color: #0074D9;
+}
+
+#deletePessoa {
+    background-color: #FF4136;
+}
+
+
+
+
+
+/* Estilos do header */
+header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E5E5E5;
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin-right: 10px;
+}
+
+nav a {
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
-header nav a:hover {
-    background-color: #f1faee;
-    color: #D9D9D9;
+nav a:hover {
+    color: #077BD8;
 }
 
-/* Estilos para a tabela */
-body {
-    background-color: #D9D9D9;
-    color: #fff;
-    font-size: 1.2rem;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 1rem;
-}
-
-h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
+/* Estilos da tabela */
 table {
+    margin: 0px;
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 1rem;
-    background-color: #fff;
-    color: #000000;
-}
-
-th,
-td {
-    padding: 0.5rem;
-    text-align: center;
-    border: 1px solid #1e1e1e;
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #E5E5E5;
 }
 
 th {
-    background-color: #454545;
+    background-color: #333;
+    color: #fff;
     font-weight: bold;
+    text-align: left;
+    padding: 10px;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f1faee;
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
-tbody tr:hover {
-    background-color: #6f6f6f;
+tr:nth-child(even) {
+    background-color: #d0d0d0;
+}
+
+tr:hover {
+    background-color: #4EC56B;
+}
+
+
+/* Estilos responsivos */
+@media only screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        margin-top: 5px;
+    }
+
+    nav li {
+        margin-right: 10px;
+    }
+
+    table {
+        font-size: 1.0rem;
+    }
 }

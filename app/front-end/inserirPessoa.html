@@ -12,8 +12,8 @@
     <form id="pessoa-form">
         <label for="NomeCompleto">Nome Completo:</label>
         <input type="text" id="NomeCompleto" name="NomeCompleto" required>
-        <label for="Cpf">CPF:</label>
-        <input type="text" id="Cpf" name="Cpf" required>
+        <label for="CPF">CPF:</label>
+        <input type="text" id="CPF" name="CPF" required>
 
         <label for="Endereco">Endereço:</label>
         <input type="text" id="Endereco" name="Endereco" required>
@@ -45,7 +45,7 @@
             event.preventDefault();
 
             const NomeCompleto = form.elements["NomeCompleto"].value;
-            const Cpf = form.elements["Cpf"].value;
+            const CPF = form.elements["CPF"].value;
             const Endereco = form.elements["Endereco"].value;
             const Telefone = form.elements["Telefone"].value;
             const Email = form.elements["Email"].value;
@@ -54,7 +54,7 @@
 
             const data = {
                 NomeCompleto,
-                Cpf,
+                CPF,
                 Endereco,
                 Telefone,
                 Email,
