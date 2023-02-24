@@ -57,10 +57,10 @@ getRoutes.get('/cliente', (req, res) => {
     );
 });
 
-// Rota para obter todos 
+// Rota para obter todos clientes-pessoas
 getRoutes.get('/cliente-pessoa', (req, res) => {
     connection.query(
-        'SELECT * FROM Cliente INNER JOIN Pessoa ',
+        'SELECT DISTINCT * FROM Cliente INNER JOIN Pessoa ON Cliente.Pessoa_idPessoa = Pessoa.idPessoa;',
         (error, results) => {
             if (error) {
                 return res.send(error);
