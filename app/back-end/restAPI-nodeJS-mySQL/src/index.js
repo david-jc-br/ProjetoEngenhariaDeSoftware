@@ -20,3 +20,5 @@ https.createServer(options, app)
     .listen(3001, () => {
         console.log('Express started at https://localhost:3001');
     });
+
+    console.log(process.versions.v8);

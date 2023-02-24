@@ -4,13 +4,12 @@ const connection = require('../connection/mysql-connection');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json(); 
 
-/*putRoutes.put('/people/update/:id', jsonParser, (req, res) => {
-    const id = req.params.id;
-    const { first_name, last_name, email, age, gender, address } = req.body;
+putRoutes.put('/pessoa/put/:id', jsonParser, (req, res) => {
+    const idPessoa = req.params.id;
+    const {NomeCompleto, CPF, Endereco, Telefone, Email, Sexo,DataNascimento} = req.body;
 
     connection.query(
-        'UPDATE People SET first_name=?, last_name=?, email=?, age=?, gender=?, address=? WHERE id=?',
-        [first_name, last_name, email, age, gender, address, id],
+        'UPDATE Pessoa SET NomeCompleto=?, CPF=?, Endereco=?, Telefone=?, Email=?, Sexo=?, DataNascimento=? WHERE idPessoa=?', [NomeCompleto, CPF, Endereco, Telefone, Email, Sexo,DataNascimento, idPessoa],
         (err, results) => {
             if (err) {
                 return res.send(err);
@@ -21,6 +20,6 @@ const jsonParser = bodyParser.json();
             }
         }
     );
-});*/
+});
 
 module.exports = putRoutes; 

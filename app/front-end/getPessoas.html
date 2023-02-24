@@ -13,7 +13,7 @@
         <h1><img id="logo-localiza" src="./image/logoLocalizaVeiculos.png" alt="Localiza Veículos"> Localiza Veículos
         </h1>
         <nav>
-            <button id="addPessoa"><a href="./inserirPessoa.html">Adicionar Pessoa</a></button>
+            <a href="./inserirPessoa.html"><button id="addPessoa">Adicionar Pessoa</button></a>
         </nav>
     </header>
 
@@ -85,7 +85,8 @@
                   <td>${pessoa.DataNascimento}</td>
                   <td>
                     <div style="display:flex;">
-                      <button id="editPessoa">Editar</button>
+                        
+                        <a href="./alterarPessoa.html"><button id="editPessoa">Editar</button></a>
                       <button id="deletePessoa" onclick="excluirPessoa(${pessoa.idPessoa}, '${pessoa.NomeCompleto}')">Excluir</button>
                     </div>
                   </td>
