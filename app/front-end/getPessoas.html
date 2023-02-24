@@ -22,7 +22,7 @@
         <table>
             <thead>
                 <tr>
-                    <th>Id Pessoa</th>
+                    <th>Id</th>
                     <th>Nome completo</th>
                     <th>CPF</th>
                     <th>Endereço</th>
@@ -40,6 +40,27 @@
     </div>
 
     <script>
+        // define uma função que faz uma requisição DELETE para a rota /pessoa/delete/:id e atualiza a tabela
+        function excluirPessoa(idPessoa, nomeCompleto) {
+            // faz a requisição DELETE para a rota https://localhost:3001/pessoa/delete/:id
+            fetch(`https://localhost:3001/pessoa/delete/${idPessoa}`, { method: 'DELETE' })
+                .then(response => response.json())
+                .then(data => {
+                    // exibe mensagem de sucesso na tela
+                    const mensagem = document.createElement('div');
+                    mensagem.innerText = `A pessoa "${nomeCompleto}" com ID ${idPessoa} foi excluída com sucesso.`;
+                    mensagem.classList.add('mensagem-remocao');
+                    document.body.appendChild(mensagem);
+                    setTimeout(() => {
+                        mensagem.remove();
+                    }, 3000);
+
+                    // atualiza a tabela de pessoas
+                    atualizarTabelapessoa();
+                })
+                .catch(error => console.error(error));
+        }
+
         // define uma função que faz uma requisição GET para a rota /pessoa e adiciona os resultados na tabela
         function atualizarTabelapessoa() {
             // faz a requisição GET para a rota https://localhost:3001/pessoa
@@ -54,20 +75,21 @@
                     data.data.forEach(pessoa => {
                         const linha = document.createElement('tr');
                         linha.innerHTML = `
-              <td>${pessoa.idPessoa}</td>
-              <td>${pessoa.NomeCompleto}</td>
-              <td>${pessoa.CPF}</td>
-              <td>${pessoa.Endereco}</td>
-              <td>${pessoa.Telefone}</td>
-              <td>${pessoa.Email}</td>
-              <td>${pessoa.Sexo}</td>
-              <td>${pessoa.DataNascimento}</td>
-              <td>
-                <div style="display:flex;">
-                  <button id="editPessoa">Editar</button><button id="deletePessoa">Excluir</button>
-                </div>
-              </td>
-            `;
+                  <td>${pessoa.idPessoa}</td>
+                  <td>${pessoa.NomeCompleto}</td>
+                  <td>${pessoa.CPF}</td>
+                  <td>${pessoa.Endereco}</td>
+                  <td>${pessoa.Telefone}</td>
+                  <td>${pessoa.Email}</td>
+                  <td>${pessoa.Sexo}</td>
+                  <td>${pessoa.DataNascimento}</td>
+                  <td>
+                    <div style="display:flex;">
+                      <button id="editPessoa">Editar</button>
+                      <button id="deletePessoa" onclick="excluirPessoa(${pessoa.idPessoa}, '${pessoa.NomeCompleto}')">Excluir</button>
+                    </div>
+                  </td>
+                `;
                         tabela.appendChild(linha);
                     });
                 })
@@ -77,7 +99,6 @@
         // chama a função para atualizar a tabela de pessoas ao carregar a página
         atualizarTabelapessoa();
     </script>
-
 </body>
 
 </html>

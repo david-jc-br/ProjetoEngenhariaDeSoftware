@@ -44,7 +44,23 @@ getRoutes.get('/aluguel/:id', (req, res) => {
 // Rota para obter todos os clientes
 getRoutes.get('/cliente', (req, res) => {
     connection.query(
-        'SELECT * FROM Cliente',
+        'SELECT * FROM Cliente ',
+        (error, results) => {
+            if (error) {
+                return res.send(error);
+            } else {
+                return res.json({
+                    data: results
+                });
+            }
+        }
+    );
+});
+
+// Rota para obter todos 
+getRoutes.get('/cliente-pessoa', (req, res) => {
+    connection.query(
+        'SELECT * FROM Cliente INNER JOIN Pessoa ',
         (error, results) => {
             if (error) {
                 return res.send(error);
