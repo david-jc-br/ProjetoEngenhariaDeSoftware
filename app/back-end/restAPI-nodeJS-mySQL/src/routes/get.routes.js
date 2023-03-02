@@ -9,7 +9,7 @@ getRoutes.get('/', (req,res) => {
 // Rota para obter todos os alugueis
 getRoutes.get('/aluguel', (req, res) => {
     connection.query(
-        'SELECT * FROM Aluguel',
+        'SELECT * FROM Aluguel Inner Join',
         (error, results) => {
             if (error) {
                 return res.send(error);
@@ -41,26 +41,10 @@ getRoutes.get('/aluguel/:id', (req, res) => {
     );
 });
 
-// Rota para obter todos os clientes
+// Rota para obter todos clientes-pessoas
 getRoutes.get('/cliente', (req, res) => {
     connection.query(
-        'SELECT * FROM Cliente ',
-        (error, results) => {
-            if (error) {
-                return res.send(error);
-            } else {
-                return res.json({
-                    data: results
-                });
-            }
-        }
-    );
-});
-
-// Rota para obter todos clientes-pessoas
-getRoutes.get('/cliente-pessoa', (req, res) => {
-    connection.query(
-        'SELECT DISTINCT * FROM Cliente INNER JOIN Pessoa ON Cliente.Pessoa_idPessoa = Pessoa.idPessoa;',
+        'SELECT DISTINCT * FROM Pessoa INNER JOIN Cliente ON Pessoa.idPessoa = Cliente.Pessoa_idPessoa;',
         (error, results) => {
             if (error) {
                 return res.send(error);
@@ -92,10 +76,10 @@ getRoutes.get('/cliente/:id', (req, res) => {
     );
 });
 
-// Rota para obter todos os funcionários
+// Rota para obter todos os funcionários com seus respectivos dados
 getRoutes.get('/funcionario', (req, res) => {
     connection.query(
-        'SELECT * FROM Funcionario',
+        'SELECT DISTINCT * FROM Pessoa INNER JOIN Funcionario ON Pessoa.idPessoa = Funcionario.Pessoa_idPessoa;',
         (error, results) => {
             if (error) {
                 return res.send(error);
