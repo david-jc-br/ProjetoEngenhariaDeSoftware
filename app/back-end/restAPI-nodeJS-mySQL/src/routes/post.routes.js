@@ -20,6 +20,23 @@ postRoutes.post('/aluguel/add', jsonParser, (req, res) => {
     );
 })
 
+// Rota para validar login
+postRoutes.post('/login/validar', jsonParser, (req, res) => {
+    const {Email, Senha} = req.body;
+
+    connection.query("SELECT CASE WHEN COUNT(*) > 0 THEN 'true' ELSE 'false' END AS valido FROM Pessoa WHERE Email = ? AND Senha = ?;", [Email, Senha], (err, results) => {
+        if (err) {
+            return res.send(err);
+        } else {
+            return res.json({
+                data: results
+            });
+        }
+    }
+    );
+})
+
+
 
 // Inicia a transação inserir cliente e pessoa
 postRoutes.post('/cliente/add', jsonParser, (req, res) => {

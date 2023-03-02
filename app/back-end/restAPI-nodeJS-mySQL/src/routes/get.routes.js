@@ -2,7 +2,7 @@ const express = require('express');
 const getRoutes = express.Router();
 const connection = require('../connection/mysql-connection');
 
-getRoutes.get('/', (req,res) => {
+getRoutes.get('/', (req, res) => {
     res.status(200).send('Restful API NodeJS Working')
 })
 
@@ -56,6 +56,7 @@ getRoutes.get('/cliente', (req, res) => {
         }
     );
 });
+
 
 // Rota para obter um cliente específico 
 getRoutes.get('/cliente/:id', (req, res) => {
@@ -181,4 +182,4 @@ getRoutes.get('/veiculo/:id', (req, res) => {
     );
 });
 
-module.exports =  getRoutes;
+module.exports = getRoutes;
