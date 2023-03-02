@@ -1,0 +1,65 @@
+body {
+    background-color: #BAB8BB;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    background-color: #E5E5E5;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+}
+
+#logo-localiza {
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+button {
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin: 10px;
+    background-color: #077BD8;
+}
+
+#Sair {
+    background-color: #FF4136;
+}
+
+h2 {
+    margin-top: 20px;
+    text-align: center;
+
+}

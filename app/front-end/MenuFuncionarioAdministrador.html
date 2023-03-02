@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Localiza Veículos - Menu Principal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/MenuFuncionarioAdministrador.css">
+</head>
+
+<body>
+    <header>
+        <h1><img id="logo-localiza" src="./image/logoLocalizaVeiculos.png" alt="Localiza Veículos"> Localiza Veículos
+        </h1>
+        <nav>
+            <a href="./login.html"><button id="Sair">Sair</button></a>
+        </nav>
+    </header>
+    <main>
+        <h2>Menu Principal</h2>
+        <div id="button-container">
+            <button id="cadastrar-cliente-button">Cadastrar Cliente</button>
+            <button id="cadastrar-aluguel-button">Cadastrar Aluguel</button>
+            <button id="cadastrar-veiculo-button">Cadastrar Veículo</button>
+            <button id="gerenciar-cliente-button">Gerenciar Clientes</button>
+        </div>
+    </main>
+    <script>
+        const cadastrarClienteButton = document.getElementById('cadastrar-cliente-button');
+        const cadastrarAluguelButton = document.getElementById('cadastrar-aluguel-button');
+        const cadastrarVeiculoButton = document.getElementById('cadastrar-veiculo-button');
+        const gerenciarClienteButton = document.getElementById('gerenciar-cliente-button');
+
+        cadastrarClienteButton.addEventListener('click', () => {
+            window.location.href = 'inserirCliente.html';
+        });
+
+        cadastrarAluguelButton.addEventListener('click', () => {
+            window.location.href = 'inserirAluguel.html';
+        });
+
+        cadastrarVeiculoButton.addEventListener('click', () => {
+            window.location.href = 'inserirVeiculo.html';
+        });
+
+        gerenciarClienteButton.addEventListener('click', () => {
+            window.location.href = 'getClientes.html';
+        });
+    </script>
+</body>
+
+</html>

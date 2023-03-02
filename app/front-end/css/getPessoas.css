@@ -1,9 +1,23 @@
-/* Estilos gerais */
-* {
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+body {
+    background-color: #BAB8BB;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    background-color: #E5E5E5;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #333;
 }
 
 #logo-localiza {
@@ -12,10 +26,10 @@
     height: 70px;
 }
 
-body {
-    background-color: #BAB8BB;
-    margin: 0;
-    padding: 0;
+.container h2 {
+    margin-top: 20px;
+    text-align: center;
+
 }
 
 .container {
@@ -23,10 +37,6 @@ body {
     margin: 0 auto;
     padding: 20px;
     width: 100%
-}
-
-.container h2 {
-    margin-top: 100px;
 }
 
 button {
@@ -67,25 +77,6 @@ button {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     z-index: 9999;
-}
-
-/* Estilos do header */
-header {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #E5E5E5;
-    padding: 20px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-size: 1.5rem;
-    color: #333;
 }
 
 nav ul {

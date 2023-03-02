@@ -36,8 +36,6 @@ postRoutes.post('/login/validar', jsonParser, (req, res) => {
     );
 })
 
-
-
 // Inicia a transação inserir cliente e pessoa
 postRoutes.post('/cliente/add', jsonParser, (req, res) => {
     const {
@@ -127,9 +125,5 @@ postRoutes.post('/funcionario/add', jsonParser, (req, res) => {
         });
     });
 });
-
-
-
-
 
 module.exports = postRoutes;
