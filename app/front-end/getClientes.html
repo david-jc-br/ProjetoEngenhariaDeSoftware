@@ -44,14 +44,14 @@
 
     <script>
         // define uma função que faz uma requisição DELETE para a rota /pessoa/delete/:id e atualiza a tabela
-        function excluirPessoa(idCliente, nomeCompleto) {
+        function excluirPessoa(idPessoa, nomeCompleto) {
             // faz a requisição DELETE para a rota https://localhost:3001/pessoa/delete/:id
-            fetch(`https://localhost:3001/pessoa/delete/${idCliente}`, { method: 'DELETE' })
+            fetch(`https://localhost:3001/pessoa/delete/${idPessoa}`, { method: 'DELETE' })
                 .then(response => response.json())
                 .then(data => {
                     // exibe mensagem de sucesso na tela
                     const mensagem = document.createElement('div');
-                    mensagem.innerText = `A pessoa "${nomeCompleto}" com ID ${idCliente} foi excluída com sucesso.`;
+                    mensagem.innerText = `O Cliente "${nomeCompleto}" com ID Pessoa ${idPessoa} foi excluída com sucesso.`;
                     mensagem.classList.add('mensagem-remocao');
                     document.body.appendChild(mensagem);
                     setTimeout(() => {
@@ -92,7 +92,7 @@
                     <div style="display:flex;">
                         
                         <a href="./atualizarDadosCliente.html"><button id="editPessoa">Editar</button></a>
-                      <button id="deletePessoa" onclick="excluirPessoa(${pessoa.idCliente}, '${pessoa.NomeCompleto}')">Excluir</button>
+                      <button id="deletePessoa" onclick="excluirPessoa(${pessoa.idPessoa}, '${pessoa.NomeCompleto}')">Excluir</button>
                     </div>
                   </td>
                 `;

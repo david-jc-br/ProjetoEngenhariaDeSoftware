@@ -22,7 +22,7 @@ postRoutes.post('/aluguel/add', jsonParser, (req, res) => {
 
 // Rota para validar login
 postRoutes.post('/login/validar', jsonParser, (req, res) => {
-    const {Email, Senha} = req.body;
+    const { Email, Senha } = req.body;
 
     connection.query("SELECT CASE WHEN COUNT(*) > 0 THEN 'true' ELSE 'false' END AS valido FROM Pessoa WHERE Email = ? AND Senha = ?;", [Email, Senha], (err, results) => {
         if (err) {
@@ -52,7 +52,7 @@ postRoutes.post('/cliente/add', jsonParser, (req, res) => {
         connection.query("INSERT INTO Pessoa (NomeCompleto, CPF, Endereco, Telefone, Email, Sexo, DataNascimento, Senha, TipoUsuario) VALUES (?,?,?,?,?,?,?,?,'Cliente');", [NomeCompleto, CPF, Endereco, Telefone, Email, Sexo, DataNascimento, Senha], function (error, results, fields) {
             if (error) {
                 return connection.rollback(function () {
-                    res.status(500).send('Erro ao inserir a pessoa.');
+                    res.status(500).send('Erro ao cadastrar a pessoa.');
                 });
             }
 
@@ -63,7 +63,7 @@ postRoutes.post('/cliente/add', jsonParser, (req, res) => {
             connection.query("INSERT INTO Cliente (CNH, Pessoa_idPessoa) VALUES (?,?);", [CNH, idPessoa], function (error, results, fields) {
                 if (error) {
                     return connection.rollback(function () {
-                        res.status(500).send('Erro ao inserir o cliente.');
+                        res.status(500).send('Erro ao cadastrar o cliente.');
                     });
                 }
 
@@ -74,7 +74,7 @@ postRoutes.post('/cliente/add', jsonParser, (req, res) => {
                             res.status(500).send('Erro ao confirmar a transação.');
                         });
                     }
-                    res.send('Transação concluída com sucesso!');
+                    res.send('Cliente Cadastrado com sucesso!');
                 });
             });
         });

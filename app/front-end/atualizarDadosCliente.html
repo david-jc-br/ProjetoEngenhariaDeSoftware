@@ -91,14 +91,10 @@
                 },
                 body: JSON.stringify(data)
             })
-                .then(response => {
-                    if (response.status === 200) {
-                        alert("Dados enviados com sucesso!");
-                    } else {
-                        response.json().then(data => {
-                            alert(`Erro ao enviar dados: ${data.error}`);
-                        });
-                    }
+                .then(response => response.text())
+                .then(text => {
+                    alert(text);
+                    window.location.replace("./getClientes.html");
                 })
                 .catch(error => console.error(error));
         });

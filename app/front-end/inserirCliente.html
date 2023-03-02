@@ -45,7 +45,7 @@
         <input type="password" id="Senha" name="Senha" required>
 
         <label for="CNH">CNH:</label>
-        <input type="text" id="CNH" name="DataNascimento" required>
+        <input type="text" id="CNH" name="CNH" required>
 
         <input type="submit" value="Enviar">
 
@@ -84,18 +84,15 @@
                 },
                 body: JSON.stringify(data)
             })
-                .then(response => {
-                    if (response.status === 200) {
-                        alert("Dados enviados com sucesso!");
-                    } else {
-                        response.json().then(data => {
-                            alert(`Erro ao enviar dados: ${data.error}`);
-                        });
-                    }
+                .then(response => response.text())
+                .then(text => {
+                    alert(text);
+                    window.location.replace("./getClientes.html");
                 })
                 .catch(error => console.error(error));
         });
     </script>
+
 </body>
 
 </html>

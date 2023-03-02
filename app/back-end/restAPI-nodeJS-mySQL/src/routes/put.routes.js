@@ -17,7 +17,7 @@ putRoutes.put('/cliente/update/:id', jsonParser, (req, res) => {
         }
 
         // Insere a pessoa na tabela Pessoa
-        connection.query('UPDATE Pessoa SET NomeCompleto=?, CPF=?, Endereco=?, Telefone=?, Email=?, Sexo=?, DataNascimento=?, Senha=? WHERE idPessoa=?', [NomeCompleto, CPF, Endereco, Telefone, Email, Sexo, DataNascimento,Senha,idPessoa], function (error, results, fields) {
+        connection.query('UPDATE Pessoa SET NomeCompleto=?, CPF=?, Endereco=?, Telefone=?, Email=?, Sexo=?, DataNascimento=?, Senha=? WHERE idPessoa=?', [NomeCompleto, CPF, Endereco, Telefone, Email, Sexo, DataNascimento, Senha, idPessoa], function (error, results, fields) {
             if (error) {
                 return connection.rollback(function () {
                     res.status(500).send('Erro ao atualizar pessoa.');
@@ -42,7 +42,7 @@ putRoutes.put('/cliente/update/:id', jsonParser, (req, res) => {
                             res.status(500).send('Erro ao confirmar a transação.');
                         });
                     }
-                    res.send('Transação concluída com sucesso!');
+                    res.send('Cliente Atualizado com sucesso!');
                 });
             });
         });
