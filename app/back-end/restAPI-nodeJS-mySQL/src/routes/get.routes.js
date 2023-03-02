@@ -44,7 +44,7 @@ getRoutes.get('/aluguel/:id', (req, res) => {
 // Rota para obter todos clientes-pessoas
 getRoutes.get('/cliente', (req, res) => {
     connection.query(
-        'SELECT DISTINCT * FROM Pessoa INNER JOIN Cliente ON Pessoa.idPessoa = Cliente.Pessoa_idPessoa;',
+        'SELECT DISTINCT idCliente, NomeCompleto, CPF, Endereco, Telefone, Email, Sexo, DataNascimento, Senha, CNH FROM Pessoa INNER JOIN Cliente ON Pessoa.idPessoa = Cliente.Pessoa_idPessoa;',
         (error, results) => {
             if (error) {
                 return res.send(error);
@@ -79,7 +79,7 @@ getRoutes.get('/cliente/:id', (req, res) => {
 // Rota para obter todos os funcionários com seus respectivos dados
 getRoutes.get('/funcionario', (req, res) => {
     connection.query(
-        'SELECT DISTINCT * FROM Pessoa INNER JOIN Funcionario ON Pessoa.idPessoa = Funcionario.Pessoa_idPessoa;',
+        'SELECT DISTINCT idFuncionario, NomeCompleto, CPF, Endereco, Telefone, Email, Sexo, DataNascimento, Senha, Funcao FROM Pessoa INNER JOIN Funcionario ON Pessoa.idPessoa = Funcionario.Pessoa_idPessoa;',
         (error, results) => {
             if (error) {
                 return res.send(error);

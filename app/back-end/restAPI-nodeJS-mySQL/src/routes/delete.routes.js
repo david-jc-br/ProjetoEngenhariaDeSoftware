@@ -56,7 +56,7 @@ deleteRoutes.delete('/cliente/delete/:id', (req, res) => {
     );
 })
 
-deleteRoutes.delete('/funcionariodelete/:id', (req, res) => {
+deleteRoutes.delete('/funcionario/delete/:id', (req, res) => {
     const idFuncionario = req.params.id;
 
     connection.query(
@@ -74,26 +74,9 @@ deleteRoutes.delete('/funcionariodelete/:id', (req, res) => {
     );
 })
 
-deleteRoutes.delete('/login/delete/:id', (req, res) => {
-    const Email = req.params.id;
-
-    connection.query(
-        'DELETE FROM Login WHERE Email = ?',
-        [Email],
-        (error, results) => {
-            if (error) {
-                return res.send(error);
-            } else {
-                return res.json({
-                    data: results
-                });
-            }
-        }
-    );
-})
 
 deleteRoutes.delete('/veiculo/delete/:id', (req, res) => {
-    const Email = req.params.id;
+    const idVeiculo = req.params.id;
 
     connection.query(
         'DELETE FROM Veiculo WHERE idVeiculo = ?',

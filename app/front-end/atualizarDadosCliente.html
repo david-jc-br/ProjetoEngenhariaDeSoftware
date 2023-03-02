@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Pessoa</title>
-    <link rel="stylesheet" href="./css/inserirPessoa.css">
+    <link rel="stylesheet" href="./css/insereCliente.css">
 </head>
 
 <body>
@@ -12,13 +12,17 @@
         <h1><img id="logo-localiza" src="./image/logoLocalizaVeiculos.png" alt="Localiza Veículos"> Localiza Veículos
         </h1>
         <nav>
-            <a href="./getPessoas.html"><button id="cancelar">Cancelar</button></a>
+            <button id="cancelar"><a href="./getClientes.html">Cancelar</a></button>
         </nav>
     </header>
     <h1>Cadastro de Pessoa</h1>
     <form id="pessoa-form">
+        <label for="idPessoa">id:</label>
+        <input type="text" id="idPessoa" name="idPessoa" required>
+
         <label for="NomeCompleto">Nome Completo:</label>
         <input type="text" id="NomeCompleto" name="NomeCompleto" required>
+
         <label for="CPF">CPF:</label>
         <input type="text" id="CPF" name="CPF" required>
 
@@ -58,7 +62,7 @@
             const Email = form.elements["Email"].value;
             const Sexo = form.elements["Sexo"].value;
             const DataNascimento = form.elements["DataNascimento"].value;
-
+            const idPessoa = form.elements["idPessoa"].value;
             const data = {
                 NomeCompleto,
                 CPF,
@@ -66,11 +70,12 @@
                 Telefone,
                 Email,
                 Sexo,
-                DataNascimento
+                DataNascimento,
+                idPessoa
             };
 
-            fetch("https://localhost:3001/pessoa/add", {
-                method: "POST",
+            fetch(`https://localhost:3001/pessoa/put/${idPessoa}`, {
+                method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
                 },

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Pessoa</title>
-    <link rel="stylesheet" href="./css/inserirPessoa.css">
+    <link rel="stylesheet" href="./css/insereCliente.css">
 </head>
 
 <body>
@@ -12,17 +12,13 @@
         <h1><img id="logo-localiza" src="./image/logoLocalizaVeiculos.png" alt="Localiza Veículos"> Localiza Veículos
         </h1>
         <nav>
-            <button id="cancelar"><a href="./getPessoas.html">Cancelar</a></button>
+            <a href="./getClientes.html"><button id="cancelar">Cancelar</button></a>
         </nav>
     </header>
     <h1>Cadastro de Pessoa</h1>
-    <form id="pessoa-form">
-        <label for="idPessoa">id:</label>
-        <input type="text" id="idPessoa" name="idPessoa" required>
-
+    <form id="cliente-form">
         <label for="NomeCompleto">Nome Completo:</label>
         <input type="text" id="NomeCompleto" name="NomeCompleto" required>
-
         <label for="CPF">CPF:</label>
         <input type="text" id="CPF" name="CPF" required>
 
@@ -45,12 +41,18 @@
         <label for="DataNascimento">Data de Nascimento:</label>
         <input type="date" id="DataNascimento" name="DataNascimento" required>
 
+        <label for="Senha">Senha:</label>
+        <input type="password" id="Senha" name="Senha" required>
+
+        <label for="CNH">CNH:</label>
+        <input type="text" id="CNH" name="DataNascimento" required>
+
         <input type="submit" value="Enviar">
 
     </form>
 
     <script>
-        const form = document.getElementById("pessoa-form");
+        const form = document.getElementById("cliente-form");
 
         form.addEventListener("submit", (event) => {
             event.preventDefault();
@@ -62,7 +64,9 @@
             const Email = form.elements["Email"].value;
             const Sexo = form.elements["Sexo"].value;
             const DataNascimento = form.elements["DataNascimento"].value;
-            const idPessoa = form.elements["idPessoa"].value;
+            const Senha = form.elements["Senha"].value;
+            const CNH = form.elements["CNH"].value;
+
             const data = {
                 NomeCompleto,
                 CPF,
@@ -70,12 +74,11 @@
                 Telefone,
                 Email,
                 Sexo,
-                DataNascimento,
-                idPessoa
+                DataNascimento
             };
 
-            fetch(`https://localhost:3001/pessoa/put/${idPessoa}`, {
-                method: "PUT",
+            fetch("https://localhost:3001/cliente/add", {
+                method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },

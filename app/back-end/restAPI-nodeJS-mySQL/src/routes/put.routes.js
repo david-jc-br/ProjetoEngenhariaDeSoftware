@@ -4,7 +4,7 @@ const connection = require('../connection/mysql-connection');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json(); 
 
-putRoutes.put('/pessoa/put/:id', jsonParser, (req, res) => {
+putRoutes.put('/cliente/put/:id', jsonParser, (req, res) => {
     const idPessoa = req.params.id;
     const {NomeCompleto, CPF, Endereco, Telefone, Email, Sexo,DataNascimento} = req.body;
 

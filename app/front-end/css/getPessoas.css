@@ -39,11 +39,11 @@ button {
     text-decoration: none;
 }
 
-#addPessoa {
+#addCliente {
     background-color: #64DE7C;
 }
 
-#addPessoa:hover {
+#addCliente:hover {
     background-color: #4EC56B;
 }
 
