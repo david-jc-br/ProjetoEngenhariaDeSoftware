@@ -2,7 +2,7 @@
 
 * **Membros:** [David JC](https://github.com/david-jc-br) , [Elias de Jesus](https://github.com/jeliasppoo), [Luiz Henrique](https://github.com/Luiziki)
 
-* **Descrição:** O projeto será o desenvolvimento de um sistema para gerenciar as locações de carro da empresa Localiza.
+* **Descrição:** O projeto terá como objetivo atender o gerenciamento comercial alugues de veículos da empresa Localiza.
 
 ## TECNOLOGIAS UTILIZADAS:
 
@@ -14,4 +14,4 @@
 ## HOSPEDAGEM: 
 * **Servidor próprio:** [solahic.com.br](http://solahic.com.br/) - Versão: **0.0**
 ### PAGINA:
-[Sistema Web de Locação de Veículos](http://solahic.com.br/~veiculo/) - Versão: **Teste de conectividade**
+[Sistema Web de Locação de Veículos](http://solahic.com.br/) - Versão: **Teste de conectividade**
