@@ -9,7 +9,6 @@
 * **Linguagem:** [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) - Versão: **10.2.154.23-node.22**
 
 * **Banco de Dados:** [MySQL](https://www.mysql.com/) - Versão: **8.0.32**
-* **Servidor:**  
 
 ## HOSPEDAGEM: 
 * **Servidor próprio:** [solahic.com.br](http://solahic.com.br/) - Versão: **0.0**
